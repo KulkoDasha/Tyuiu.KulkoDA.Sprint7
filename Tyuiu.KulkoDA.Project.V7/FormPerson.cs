@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Tyuiu.KulkoDA.Project.V7
 {
-    public partial class FormAbout : Form
+    public partial class FormPerson : Form
     {
-        public FormAbout()
+        public FormPerson()
         {
             InitializeComponent();
-        }
-        private void buttonAbout_KDA_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

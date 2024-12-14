@@ -46,7 +46,6 @@
             textBoxabout_KDA.Size = new Size(241, 114);
             textBoxabout_KDA.TabIndex = 3;
             textBoxabout_KDA.Text = "Разработчик: Кулько.Д.А\r\nгруппа ИИПб-24-2\r\n\r\nТюменский индустриальный университет 2024\r\nВысшая школа цифровых технологий 2024\r\n\r\n";
-            textBoxabout_KDA.TextChanged += this.textBoxabout_KDA_TextChanged;
             // 
             // pictureBoxAvatar_KDA
             // 
@@ -66,6 +65,7 @@
             buttonAbout_KDA.TabIndex = 5;
             buttonAbout_KDA.Text = "Ок";
             buttonAbout_KDA.UseVisualStyleBackColor = true;
+            buttonAbout_KDA.Click += buttonAbout_KDA_Click;
             // 
             // FormAbout
             // 
@@ -76,6 +76,7 @@
             Controls.Add(pictureBoxAvatar_KDA);
             Controls.Add(textBoxabout_KDA);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "FormAbout";
             Text = "О приложении";
             ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar_KDA).EndInit();

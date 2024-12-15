@@ -21,14 +21,26 @@ namespace Tyuiu.KulkoDA.Project.V7
             openFilePath = openFileDialog_KDA.FileName;
             int col = 8;
             int row = ds.RowCount(openFilePath);
-            for(int i = 0; i < row; i++)
+            for (int i = 0; i < row; i++)
             {
-                for(int j = 0; j < col; j++)
+                for (int j = 0; j < col; j++)
                 {
-                    dataGridView_KDA.Rows[i].Cells[j].Value =0;
+                    dataGridView_KDA.Rows[i].Cells[j].Value = "1";
                 }
 
             }
+        }
+
+        private void buttonPerson_KDA_Click(object sender, EventArgs e)
+        {
+            FormPerson form = new FormPerson();
+            form.ShowDialog();
+        }
+
+        private void buttonChart_KDA_Click(object sender, EventArgs e)
+        {
+            FormChart form = new FormChart();
+            form.ShowDialog();
         }
     }
 }

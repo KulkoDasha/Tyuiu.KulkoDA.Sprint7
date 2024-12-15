@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            textBox1 = new TextBox();
+            textBoxHeadLine_KDA = new TextBox();
             buttonOpen_KDA = new Button();
             buttonHelp_KDA = new Button();
             dataGridView_KDA = new DataGridView();
@@ -42,31 +42,34 @@
             Pet = new DataGridViewTextBoxColumn();
             Debt = new DataGridViewTextBoxColumn();
             People_Count = new DataGridViewTextBoxColumn();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            button3 = new Button();
-            button4 = new Button();
+            textBoxApartment_KDA = new TextBox();
+            textBoxPeople_KDA = new TextBox();
+            textBoxPeopleIn_KDA = new TextBox();
+            textBoxApartmentIn_KDA = new TextBox();
+            textBoxDebtIn_KDA = new TextBox();
+            textBoxDebt_KDA = new TextBox();
+            buttonChart_KDA = new Button();
+            buttonPerson_KDA = new Button();
             openFileDialog_KDA = new OpenFileDialog();
             toolTip1 = new ToolTip(components);
+            groupBox_KDA = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).BeginInit();
+            groupBox_KDA.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxHeadLine_KDA
             // 
-            textBox1.BackColor = SystemColors.MenuBar;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 13F);
-            textBox1.Location = new Point(300, 66);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(215, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Общие сведения о доме:\r\n";
+            textBoxHeadLine_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxHeadLine_KDA.BackColor = SystemColors.MenuBar;
+            textBoxHeadLine_KDA.BorderStyle = BorderStyle.None;
+            textBoxHeadLine_KDA.Font = new Font("Segoe UI", 13F);
+            textBoxHeadLine_KDA.Location = new Point(281, 66);
+            textBoxHeadLine_KDA.Multiline = true;
+            textBoxHeadLine_KDA.Name = "textBoxHeadLine_KDA";
+            textBoxHeadLine_KDA.ReadOnly = true;
+            textBoxHeadLine_KDA.Size = new Size(215, 23);
+            textBoxHeadLine_KDA.TabIndex = 0;
+            textBoxHeadLine_KDA.Text = "Общие сведения о доме:\r\n";
             // 
             // buttonOpen_KDA
             // 
@@ -151,106 +154,122 @@
             People_Count.Name = "People_Count";
             People_Count.ReadOnly = true;
             // 
-            // textBox2
+            // textBoxApartment_KDA
             // 
-            textBox2.Location = new Point(12, 349);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(100, 60);
-            textBox2.TabIndex = 4;
-            textBox2.Text = "Общее кол.во залесенных квартир";
+            textBoxApartment_KDA.Location = new Point(18, 16);
+            textBoxApartment_KDA.Multiline = true;
+            textBoxApartment_KDA.Name = "textBoxApartment_KDA";
+            textBoxApartment_KDA.ReadOnly = true;
+            textBoxApartment_KDA.Size = new Size(100, 60);
+            textBoxApartment_KDA.TabIndex = 4;
+            textBoxApartment_KDA.Text = "Общее кол.во залесенных квартир";
             // 
-            // textBox3
+            // textBoxPeople_KDA
             // 
-            textBox3.Location = new Point(139, 349);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(100, 60);
-            textBox3.TabIndex = 5;
-            textBox3.Text = "Общее кол.во людей";
+            textBoxPeople_KDA.Location = new Point(141, 16);
+            textBoxPeople_KDA.Multiline = true;
+            textBoxPeople_KDA.Name = "textBoxPeople_KDA";
+            textBoxPeople_KDA.ReadOnly = true;
+            textBoxPeople_KDA.Size = new Size(100, 60);
+            textBoxPeople_KDA.TabIndex = 5;
+            textBoxPeople_KDA.Text = "Общее кол.во людей";
             // 
-            // textBox4
+            // textBoxPeopleIn_KDA
             // 
-            textBox4.Location = new Point(139, 415);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 6;
+            textBoxPeopleIn_KDA.Location = new Point(141, 82);
+            textBoxPeopleIn_KDA.Name = "textBoxPeopleIn_KDA";
+            textBoxPeopleIn_KDA.Size = new Size(100, 23);
+            textBoxPeopleIn_KDA.TabIndex = 6;
             // 
-            // textBox5
+            // textBoxApartmentIn_KDA
             // 
-            textBox5.Location = new Point(12, 415);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 7;
+            textBoxApartmentIn_KDA.Location = new Point(18, 82);
+            textBoxApartmentIn_KDA.Name = "textBoxApartmentIn_KDA";
+            textBoxApartmentIn_KDA.Size = new Size(100, 23);
+            textBoxApartmentIn_KDA.TabIndex = 7;
             // 
-            // textBox6
+            // textBoxDebtIn_KDA
             // 
-            textBox6.Location = new Point(263, 415);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(107, 23);
-            textBox6.TabIndex = 8;
+            textBoxDebtIn_KDA.Location = new Point(269, 82);
+            textBoxDebtIn_KDA.Name = "textBoxDebtIn_KDA";
+            textBoxDebtIn_KDA.Size = new Size(107, 23);
+            textBoxDebtIn_KDA.TabIndex = 8;
             // 
-            // textBox7
+            // textBoxDebt_KDA
             // 
-            textBox7.Location = new Point(263, 349);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(107, 60);
-            textBox7.TabIndex = 9;
-            textBox7.Text = "Общая сумма задолженностей";
+            textBoxDebt_KDA.BackColor = SystemColors.MenuBar;
+            textBoxDebt_KDA.Location = new Point(269, 16);
+            textBoxDebt_KDA.Multiline = true;
+            textBoxDebt_KDA.Name = "textBoxDebt_KDA";
+            textBoxDebt_KDA.ReadOnly = true;
+            textBoxDebt_KDA.Size = new Size(107, 60);
+            textBoxDebt_KDA.TabIndex = 9;
+            textBoxDebt_KDA.Text = "Общая сумма задолженностей";
             // 
-            // button3
+            // buttonChart_KDA
             // 
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(100, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(66, 53);
-            button3.TabIndex = 10;
-            button3.UseVisualStyleBackColor = true;
+            buttonChart_KDA.Image = (Image)resources.GetObject("buttonChart_KDA.Image");
+            buttonChart_KDA.Location = new Point(100, 12);
+            buttonChart_KDA.Name = "buttonChart_KDA";
+            buttonChart_KDA.Size = new Size(66, 53);
+            buttonChart_KDA.TabIndex = 10;
+            buttonChart_KDA.UseVisualStyleBackColor = true;
+            buttonChart_KDA.Click += buttonChart_KDA_Click;
             // 
-            // button4
+            // buttonPerson_KDA
             // 
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(187, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(66, 53);
-            button4.TabIndex = 11;
-            button4.UseVisualStyleBackColor = true;
+            buttonPerson_KDA.Image = (Image)resources.GetObject("buttonPerson_KDA.Image");
+            buttonPerson_KDA.Location = new Point(187, 12);
+            buttonPerson_KDA.Name = "buttonPerson_KDA";
+            buttonPerson_KDA.Size = new Size(66, 53);
+            buttonPerson_KDA.TabIndex = 11;
+            buttonPerson_KDA.UseVisualStyleBackColor = true;
+            buttonPerson_KDA.Click += buttonPerson_KDA_Click;
             // 
             // openFileDialog_KDA
             // 
             openFileDialog_KDA.FileName = "openFileDialog1";
+            // 
+            // groupBox_KDA
+            // 
+            groupBox_KDA.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox_KDA.Controls.Add(textBoxDebt_KDA);
+            groupBox_KDA.Controls.Add(textBoxDebtIn_KDA);
+            groupBox_KDA.Controls.Add(textBoxApartmentIn_KDA);
+            groupBox_KDA.Controls.Add(textBoxPeople_KDA);
+            groupBox_KDA.Controls.Add(textBoxApartment_KDA);
+            groupBox_KDA.Controls.Add(textBoxPeopleIn_KDA);
+            groupBox_KDA.Location = new Point(12, 333);
+            groupBox_KDA.Name = "groupBox_KDA";
+            groupBox_KDA.Size = new Size(397, 120);
+            groupBox_KDA.TabIndex = 12;
+            groupBox_KDA.TabStop = false;
+            groupBox_KDA.Text = "Общие сведения:";
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(755, 455);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(buttonPerson_KDA);
+            Controls.Add(buttonChart_KDA);
             Controls.Add(dataGridView_KDA);
             Controls.Add(buttonHelp_KDA);
             Controls.Add(buttonOpen_KDA);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxHeadLine_KDA);
+            Controls.Add(groupBox_KDA);
             Name = "FormMain";
-            Text = "Form1";
+            Text = "Главное Меню";
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).EndInit();
+            groupBox_KDA.ResumeLayout(false);
+            groupBox_KDA.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox textBoxHeadLine_KDA;
         private Button buttonOpen_KDA;
         private Button buttonHelp_KDA;
         private DataGridView dataGridView_KDA;
@@ -262,15 +281,16 @@
         private DataGridViewTextBoxColumn Pet;
         private DataGridViewTextBoxColumn Debt;
         private DataGridViewTextBoxColumn People_Count;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private Button button3;
-        private Button button4;
+        private TextBox textBoxApartment_KDA;
+        private TextBox textBoxPeople_KDA;
+        private TextBox textBoxPeopleIn_KDA;
+        private TextBox textBoxApartmentIn_KDA;
+        private TextBox textBoxDebtIn_KDA;
+        private TextBox textBoxDebt_KDA;
+        private Button buttonChart_KDA;
+        private Button buttonPerson_KDA;
         private OpenFileDialog openFileDialog_KDA;
         private ToolTip toolTip1;
+        private GroupBox groupBox_KDA;
     }
 }

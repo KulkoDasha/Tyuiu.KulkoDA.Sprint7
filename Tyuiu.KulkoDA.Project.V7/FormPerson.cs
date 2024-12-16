@@ -16,5 +16,12 @@ namespace Tyuiu.KulkoDA.Project.V7
         {
             InitializeComponent();
         }
+
+        private void buttonFind_KDA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

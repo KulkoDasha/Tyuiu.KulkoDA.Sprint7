@@ -12,7 +12,6 @@ namespace Tyuiu.KulkoDA.Project.V7
         }
         string openFilePath;
         DataService ds = new DataService();
-        
         private void buttonHelp_KDA_Click(object sender, EventArgs e)
         {
             FormAbout form = new FormAbout();
@@ -39,6 +38,7 @@ namespace Tyuiu.KulkoDA.Project.V7
                 c++;
             }
             buttonCount_KDA.Enabled = true;
+            buttonSave_KDA.Enabled = true;
         }
 
         private void buttonPerson_KDA_Click(object sender, EventArgs e)
@@ -55,25 +55,51 @@ namespace Tyuiu.KulkoDA.Project.V7
 
         private void buttonCount_KDA_Click(object sender, EventArgs e)
         {
-            int r = dataGridView_KDA.RowCount-1;
-            for(int i=0;i<r;i++)
+            int r = dataGridView_KDA.RowCount - 1;
+            for (int i = 0; i < r; i++)
             {
                 textBoxApartmentIn_KDA.Text = Convert.ToString(r);
             }
             int people = 0;
-            for(int i=0;i<r; i++)
+            for (int i = 0; i < r; i++)
             {
                 people += Convert.ToInt32(dataGridView_KDA.Rows[i].Cells[7].Value);
             }
-            textBoxPeopleIn_KDA.Text=Convert.ToString(people);
+            textBoxPeopleIn_KDA.Text = Convert.ToString(people);
             int debt = 0;
             for (int i = 0; i < r; i++)
             {
                 debt += Convert.ToInt32(dataGridView_KDA.Rows[i].Cells[6].Value);
             }
-            textBoxDebtIn_KDA.Text=Convert.ToString(debt);
+            textBoxDebtIn_KDA.Text = Convert.ToString(debt);
+            
         }
 
-        
+        private void buttonSave_KDA_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_KDA.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog_KDA.ShowDialog();
+            string path = saveFileDialog_KDA.FileName;
+            int rows = dataGridView_KDA.Rows.Count;
+            int cols = dataGridView_KDA.Columns.Count;
+            string str = "";
+            for(int i = 0; i < rows; i++)
+            {
+                for(int j = 0; j < cols; j++)
+                {
+                    if(j!=cols-1)
+                    {
+                        str += dataGridView_KDA.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str += dataGridView_KDA.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+            MessageBox.Show("Файл успешно сохранен!");
+        }
     }
 }

@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChart));
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             chart_KDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxInChart_KDA = new GroupBox();
+            textBoxY_KDA = new TextBox();
+            textBoxX_KDA = new TextBox();
             buttonDoneChart_KDA = new Button();
             textBoxYIn_KDA = new TextBox();
             textBoxXIn_KDA = new TextBox();
-            textBoxX_KDA = new TextBox();
-            textBoxY_KDA = new TextBox();
+            buttonOpen_KDA = new Button();
             ((System.ComponentModel.ISupportInitialize)chart_KDA).BeginInit();
             groupBoxInChart_KDA.SuspendLayout();
             SuspendLayout();
@@ -46,16 +48,16 @@
             // chart_KDA
             // 
             chart_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            chartArea2.Name = "ChartArea1";
-            chart_KDA.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart_KDA.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chart_KDA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_KDA.Legends.Add(legend1);
             chart_KDA.Location = new Point(201, 26);
             chart_KDA.Name = "chart_KDA";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart_KDA.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart_KDA.Series.Add(series1);
             chart_KDA.Size = new Size(506, 344);
             chart_KDA.TabIndex = 0;
             // 
@@ -67,12 +69,30 @@
             groupBoxInChart_KDA.Controls.Add(buttonDoneChart_KDA);
             groupBoxInChart_KDA.Controls.Add(textBoxYIn_KDA);
             groupBoxInChart_KDA.Controls.Add(textBoxXIn_KDA);
-            groupBoxInChart_KDA.Location = new Point(12, 12);
+            groupBoxInChart_KDA.Location = new Point(12, 71);
             groupBoxInChart_KDA.Name = "groupBoxInChart_KDA";
-            groupBoxInChart_KDA.Size = new Size(174, 347);
+            groupBoxInChart_KDA.Size = new Size(174, 288);
             groupBoxInChart_KDA.TabIndex = 1;
             groupBoxInChart_KDA.TabStop = false;
             groupBoxInChart_KDA.Text = "Ввод данных:";
+            // 
+            // textBoxY_KDA
+            // 
+            textBoxY_KDA.Location = new Point(6, 95);
+            textBoxY_KDA.Name = "textBoxY_KDA";
+            textBoxY_KDA.ReadOnly = true;
+            textBoxY_KDA.Size = new Size(126, 23);
+            textBoxY_KDA.TabIndex = 6;
+            textBoxY_KDA.Text = "Введите имя столбца\r\n\r\n";
+            // 
+            // textBoxX_KDA
+            // 
+            textBoxX_KDA.Location = new Point(6, 22);
+            textBoxX_KDA.Name = "textBoxX_KDA";
+            textBoxX_KDA.ReadOnly = true;
+            textBoxX_KDA.Size = new Size(126, 23);
+            textBoxX_KDA.TabIndex = 5;
+            textBoxX_KDA.Text = "Введите имя столбца\r\n\r\n";
             // 
             // buttonDoneChart_KDA
             // 
@@ -97,31 +117,22 @@
             textBoxXIn_KDA.Name = "textBoxXIn_KDA";
             textBoxXIn_KDA.Size = new Size(100, 23);
             textBoxXIn_KDA.TabIndex = 2;
-            
             // 
-            // textBoxX_KDA
+            // buttonOpen_KDA
             // 
-            textBoxX_KDA.Location = new Point(6, 22);
-            textBoxX_KDA.Name = "textBoxX_KDA";
-            textBoxX_KDA.ReadOnly = true;
-            textBoxX_KDA.Size = new Size(126, 23);
-            textBoxX_KDA.TabIndex = 5;
-            textBoxX_KDA.Text = "Введите переменную\r\n";
-            // 
-            // textBoxY_KDA
-            // 
-            textBoxY_KDA.Location = new Point(6, 95);
-            textBoxY_KDA.Name = "textBoxY_KDA";
-            textBoxY_KDA.ReadOnly = true;
-            textBoxY_KDA.Size = new Size(126, 23);
-            textBoxY_KDA.TabIndex = 6;
-            textBoxY_KDA.Text = "Введите переменную\r\n";
+            buttonOpen_KDA.Image = (Image)resources.GetObject("buttonOpen_KDA.Image");
+            buttonOpen_KDA.Location = new Point(12, 12);
+            buttonOpen_KDA.Name = "buttonOpen_KDA";
+            buttonOpen_KDA.Size = new Size(66, 53);
+            buttonOpen_KDA.TabIndex = 4;
+            buttonOpen_KDA.UseVisualStyleBackColor = true;
             // 
             // FormChart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(705, 371);
+            Controls.Add(buttonOpen_KDA);
             Controls.Add(groupBoxInChart_KDA);
             Controls.Add(chart_KDA);
             Name = "FormChart";
@@ -142,5 +153,6 @@
         private Button buttonDoneChart_KDA;
         private TextBox textBoxX_KDA;
         private TextBox textBoxY_KDA;
+        private Button buttonOpen_KDA;
     }
 }

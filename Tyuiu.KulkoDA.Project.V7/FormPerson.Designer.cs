@@ -28,19 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPerson));
             textBoxName_KDA = new TextBox();
             groupBoxName_KDA = new GroupBox();
             buttonFind_KDA = new Button();
             buttonOpen_KDA = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            textBoxEntranceIn_KDA = new TextBox();
+            textBoxRoomIn_KDA = new TextBox();
+            textBoxRentIn_KDA = new TextBox();
+            textBoxNumIn_KDA = new TextBox();
+            textBoxPetIn_KDA = new TextBox();
+            textBoxPersonIn_KDA = new TextBox();
+            textBoxSquareIn_KDA = new TextBox();
             groupBoxDannye_KDA = new GroupBox();
+            textBoxPerson_KDA = new TextBox();
+            textBoxRent_KDA = new TextBox();
+            textBoxPet_KDA = new TextBox();
+            textBoxRoom_KDA = new TextBox();
+            textBoxSquare_KDA = new TextBox();
+            textBoxNum_KDA = new TextBox();
+            textBoxEntrance_KDA = new TextBox();
+            openFileDialog_KDA = new OpenFileDialog();
+            toolTip1 = new ToolTip(components);
             groupBoxName_KDA.SuspendLayout();
             groupBoxDannye_KDA.SuspendLayout();
             SuspendLayout();
@@ -81,65 +91,73 @@
             buttonOpen_KDA.Size = new Size(66, 53);
             buttonOpen_KDA.TabIndex = 3;
             buttonOpen_KDA.UseVisualStyleBackColor = true;
+            buttonOpen_KDA.Click += buttonOpen_KDA_Click;
             // 
-            // textBox1
+            // textBoxEntranceIn_KDA
             // 
-            textBox1.Location = new Point(6, 48);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            textBoxEntranceIn_KDA.Location = new Point(6, 48);
+            textBoxEntranceIn_KDA.Name = "textBoxEntranceIn_KDA";
+            textBoxEntranceIn_KDA.Size = new Size(100, 23);
+            textBoxEntranceIn_KDA.TabIndex = 4;
             // 
-            // textBox2
+            // textBoxRoomIn_KDA
             // 
-            textBox2.Location = new Point(414, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 5;
+            textBoxRoomIn_KDA.Location = new Point(414, 48);
+            textBoxRoomIn_KDA.Name = "textBoxRoomIn_KDA";
+            textBoxRoomIn_KDA.Size = new Size(100, 23);
+            textBoxRoomIn_KDA.TabIndex = 5;
             // 
-            // textBox3
+            // textBoxRentIn_KDA
             // 
-            textBox3.Location = new Point(137, 99);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 6;
+            textBoxRentIn_KDA.Location = new Point(137, 99);
+            textBoxRentIn_KDA.Name = "textBoxRentIn_KDA";
+            textBoxRentIn_KDA.Size = new Size(100, 23);
+            textBoxRentIn_KDA.TabIndex = 6;
             // 
-            // textBox4
+            // textBoxNumIn_KDA
             // 
-            textBox4.Location = new Point(137, 48);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 7;
+            textBoxNumIn_KDA.Location = new Point(137, 48);
+            textBoxNumIn_KDA.Name = "textBoxNumIn_KDA";
+            textBoxNumIn_KDA.Size = new Size(100, 23);
+            textBoxNumIn_KDA.TabIndex = 7;
             // 
-            // textBox5
+            // textBoxPetIn_KDA
             // 
-            textBox5.Location = new Point(6, 99);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 8;
+            textBoxPetIn_KDA.Location = new Point(6, 99);
+            textBoxPetIn_KDA.Name = "textBoxPetIn_KDA";
+            textBoxPetIn_KDA.Size = new Size(100, 23);
+            textBoxPetIn_KDA.TabIndex = 8;
             // 
-            // textBox6
+            // textBoxPersonIn_KDA
             // 
-            textBox6.Location = new Point(277, 99);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 9;
+            textBoxPersonIn_KDA.Location = new Point(277, 99);
+            textBoxPersonIn_KDA.Name = "textBoxPersonIn_KDA";
+            textBoxPersonIn_KDA.Size = new Size(100, 23);
+            textBoxPersonIn_KDA.TabIndex = 9;
             // 
-            // textBox7
+            // textBoxSquareIn_KDA
             // 
-            textBox7.Location = new Point(277, 48);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 10;
+            textBoxSquareIn_KDA.Location = new Point(277, 48);
+            textBoxSquareIn_KDA.Name = "textBoxSquareIn_KDA";
+            textBoxSquareIn_KDA.Size = new Size(100, 23);
+            textBoxSquareIn_KDA.TabIndex = 10;
             // 
             // groupBoxDannye_KDA
             // 
-            groupBoxDannye_KDA.Controls.Add(textBox7);
-            groupBoxDannye_KDA.Controls.Add(textBox1);
-            groupBoxDannye_KDA.Controls.Add(textBox4);
-            groupBoxDannye_KDA.Controls.Add(textBox5);
-            groupBoxDannye_KDA.Controls.Add(textBox6);
-            groupBoxDannye_KDA.Controls.Add(textBox2);
-            groupBoxDannye_KDA.Controls.Add(textBox3);
+            groupBoxDannye_KDA.Controls.Add(textBoxPerson_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxRent_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxPet_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxRoom_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxSquare_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxNum_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxEntrance_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxSquareIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxEntranceIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxNumIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxPetIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxPersonIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxRoomIn_KDA);
+            groupBoxDannye_KDA.Controls.Add(textBoxRentIn_KDA);
             groupBoxDannye_KDA.Location = new Point(12, 154);
             groupBoxDannye_KDA.Name = "groupBoxDannye_KDA";
             groupBoxDannye_KDA.Size = new Size(555, 160);
@@ -147,15 +165,98 @@
             groupBoxDannye_KDA.TabStop = false;
             groupBoxDannye_KDA.Text = "Данные";
             // 
+            // textBoxPerson_KDA
+            // 
+            textBoxPerson_KDA.BackColor = SystemColors.MenuBar;
+            textBoxPerson_KDA.BorderStyle = BorderStyle.None;
+            textBoxPerson_KDA.Location = new Point(277, 77);
+            textBoxPerson_KDA.Name = "textBoxPerson_KDA";
+            textBoxPerson_KDA.ReadOnly = true;
+            textBoxPerson_KDA.Size = new Size(122, 16);
+            textBoxPerson_KDA.TabIndex = 17;
+            textBoxPerson_KDA.Text = "Количество человек:";
+            // 
+            // textBoxRent_KDA
+            // 
+            textBoxRent_KDA.BackColor = SystemColors.MenuBar;
+            textBoxRent_KDA.BorderStyle = BorderStyle.None;
+            textBoxRent_KDA.Location = new Point(137, 77);
+            textBoxRent_KDA.Name = "textBoxRent_KDA";
+            textBoxRent_KDA.ReadOnly = true;
+            textBoxRent_KDA.Size = new Size(100, 16);
+            textBoxRent_KDA.TabIndex = 16;
+            textBoxRent_KDA.Text = "Задолженность:";
+            // 
+            // textBoxPet_KDA
+            // 
+            textBoxPet_KDA.BackColor = SystemColors.MenuBar;
+            textBoxPet_KDA.BorderStyle = BorderStyle.None;
+            textBoxPet_KDA.Location = new Point(6, 77);
+            textBoxPet_KDA.Name = "textBoxPet_KDA";
+            textBoxPet_KDA.ReadOnly = true;
+            textBoxPet_KDA.Size = new Size(125, 16);
+            textBoxPet_KDA.TabIndex = 15;
+            textBoxPet_KDA.Text = "Наличие животных:";
+            // 
+            // textBoxRoom_KDA
+            // 
+            textBoxRoom_KDA.BackColor = SystemColors.MenuBar;
+            textBoxRoom_KDA.BorderStyle = BorderStyle.None;
+            textBoxRoom_KDA.Location = new Point(414, 22);
+            textBoxRoom_KDA.Name = "textBoxRoom_KDA";
+            textBoxRoom_KDA.ReadOnly = true;
+            textBoxRoom_KDA.Size = new Size(118, 16);
+            textBoxRoom_KDA.TabIndex = 14;
+            textBoxRoom_KDA.Text = "Количество комнат:";
+            // 
+            // textBoxSquare_KDA
+            // 
+            textBoxSquare_KDA.BackColor = SystemColors.MenuBar;
+            textBoxSquare_KDA.BorderStyle = BorderStyle.None;
+            textBoxSquare_KDA.Location = new Point(277, 22);
+            textBoxSquare_KDA.Name = "textBoxSquare_KDA";
+            textBoxSquare_KDA.ReadOnly = true;
+            textBoxSquare_KDA.Size = new Size(100, 16);
+            textBoxSquare_KDA.TabIndex = 13;
+            textBoxSquare_KDA.Text = "Общая площадь:";
+            // 
+            // textBoxNum_KDA
+            // 
+            textBoxNum_KDA.BackColor = SystemColors.MenuBar;
+            textBoxNum_KDA.BorderStyle = BorderStyle.None;
+            textBoxNum_KDA.Location = new Point(137, 22);
+            textBoxNum_KDA.Name = "textBoxNum_KDA";
+            textBoxNum_KDA.ReadOnly = true;
+            textBoxNum_KDA.Size = new Size(100, 16);
+            textBoxNum_KDA.TabIndex = 12;
+            textBoxNum_KDA.Text = "Номер квартиры:";
+            // 
+            // textBoxEntrance_KDA
+            // 
+            textBoxEntrance_KDA.BackColor = SystemColors.MenuBar;
+            textBoxEntrance_KDA.BorderStyle = BorderStyle.None;
+            textBoxEntrance_KDA.Location = new Point(6, 22);
+            textBoxEntrance_KDA.Name = "textBoxEntrance_KDA";
+            textBoxEntrance_KDA.ReadOnly = true;
+            textBoxEntrance_KDA.Size = new Size(100, 16);
+            textBoxEntrance_KDA.TabIndex = 11;
+            textBoxEntrance_KDA.Text = "Номер подъезда:";
+            // 
+            // openFileDialog_KDA
+            // 
+            openFileDialog_KDA.FileName = "openFileDialog1";
+            // 
             // FormPerson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(579, 332);
+            ClientSize = new Size(579, 328);
             Controls.Add(buttonOpen_KDA);
             Controls.Add(buttonFind_KDA);
             Controls.Add(groupBoxName_KDA);
             Controls.Add(groupBoxDannye_KDA);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "FormPerson";
             Text = "Личные сведения";
             groupBoxName_KDA.ResumeLayout(false);
@@ -171,13 +272,22 @@
         private GroupBox groupBoxName_KDA;
         private Button buttonFind_KDA;
         private Button buttonOpen_KDA;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox textBoxEntranceIn_KDA;
+        private TextBox textBoxRoomIn_KDA;
+        private TextBox textBoxRentIn_KDA;
+        private TextBox textBoxNumIn_KDA;
+        private TextBox textBoxPetIn_KDA;
+        private TextBox textBoxPersonIn_KDA;
+        private TextBox textBoxSquareIn_KDA;
         private GroupBox groupBoxDannye_KDA;
+        private TextBox textBoxEntrance_KDA;
+        private TextBox textBoxPerson_KDA;
+        private TextBox textBoxRent_KDA;
+        private TextBox textBoxPet_KDA;
+        private TextBox textBoxRoom_KDA;
+        private TextBox textBoxSquare_KDA;
+        private TextBox textBoxNum_KDA;
+        private OpenFileDialog openFileDialog_KDA;
+        private ToolTip toolTip1;
     }
 }

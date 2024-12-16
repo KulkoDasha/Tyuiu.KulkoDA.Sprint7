@@ -20,7 +20,7 @@ namespace Tyuiu.KulkoDA.Project.V7
 
         private void buttonOpen_KDA_Click(object sender, EventArgs e)
         {
-            
+            //
             openFileDialog_KDA.ShowDialog();
             openFilePath = openFileDialog_KDA.FileName;
             int col = 8;

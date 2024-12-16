@@ -1,3 +1,6 @@
+using System.Data;
+using System.Web;
+using System.Windows.Forms;
 using Tyuiu.KulkoDA.Project.V7.Lib;
 namespace Tyuiu.KulkoDA.Project.V7
 {
@@ -17,17 +20,22 @@ namespace Tyuiu.KulkoDA.Project.V7
 
         private void buttonOpen_KDA_Click(object sender, EventArgs e)
         {
+            
             openFileDialog_KDA.ShowDialog();
             openFilePath = openFileDialog_KDA.FileName;
             int col = 8;
             int row = ds.RowCount(openFilePath);
-            for (int i = 0; i < row; i++)
+            dataGridView_KDA.RowCount = row;
+            dataGridView_KDA.ColumnCount = col;
+            string[,] mass = new string[row,col];
+            mass = ds.StringMass(openFilePath);
+            int c = 0;
+            for(int i = 0; i < row; i++)
             {
-                for (int j = 0; j < col; j++)
+                for(int j = 0; j < col ; j++)
                 {
-                    dataGridView_KDA.Rows[i].Cells[j].Value = "1";
+                    dataGridView_KDA.Rows[i].Cells[j].Value = mass[i,j];
                 }
-
             }
         }
 

@@ -99,6 +99,7 @@
             dataGridView_KDA.Columns.AddRange(new DataGridViewColumn[] { Surname, Num_Entrance, Num_Apartment, Square, Room_Count, Pet, Debt, People_Count });
             dataGridView_KDA.Location = new Point(12, 95);
             dataGridView_KDA.Name = "dataGridView_KDA";
+            dataGridView_KDA.RowHeadersVisible = false;
             dataGridView_KDA.Size = new Size(731, 232);
             dataGridView_KDA.TabIndex = 3;
             // 

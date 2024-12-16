@@ -20,7 +20,6 @@ namespace Tyuiu.KulkoDA.Project.V7
 
         private void buttonOpen_KDA_Click(object sender, EventArgs e)
         {
-            //
             openFileDialog_KDA.ShowDialog();
             openFilePath = openFileDialog_KDA.FileName;
             int col = 8;
@@ -28,14 +27,15 @@ namespace Tyuiu.KulkoDA.Project.V7
             dataGridView_KDA.RowCount = row;
             dataGridView_KDA.ColumnCount = col;
             string[,] mass = new string[row,col];
-            mass = ds.StringMass(openFilePath);
+            mass = ds.StringMass(openFilePath,row,col);
             int c = 0;
-            for(int i = 0; i < row; i++)
+            for(int i = 1; i < row; i++)
             {
                 for(int j = 0; j < col ; j++)
                 {
-                    dataGridView_KDA.Rows[i].Cells[j].Value = mass[i,j];
+                    dataGridView_KDA.Rows[c].Cells[j].Value = mass[i,j];
                 }
+                c++;
             }
         }
 

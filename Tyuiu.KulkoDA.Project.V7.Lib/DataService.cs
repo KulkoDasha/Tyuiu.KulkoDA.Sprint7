@@ -16,9 +16,9 @@
             return row;
         }
         
-        public string[,] StringMass(string path)
+        public string[,] StringMass(string path,int row,int col)
         {
-            string[,] mass = new string[2,8];
+            string[,] mass = new string[row,col];
             int j = 0;
             String line = String.Empty;
             System.IO.StreamReader file = new System.IO.StreamReader(path);

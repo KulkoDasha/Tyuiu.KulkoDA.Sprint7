@@ -34,14 +34,6 @@
             buttonOpen_KDA = new Button();
             buttonHelp_KDA = new Button();
             dataGridView_KDA = new DataGridView();
-            Surname = new DataGridViewTextBoxColumn();
-            Num_Entrance = new DataGridViewTextBoxColumn();
-            Num_Apartment = new DataGridViewTextBoxColumn();
-            Square = new DataGridViewTextBoxColumn();
-            Room_Count = new DataGridViewTextBoxColumn();
-            Pet = new DataGridViewTextBoxColumn();
-            Debt = new DataGridViewTextBoxColumn();
-            People_Count = new DataGridViewTextBoxColumn();
             textBoxApartment_KDA = new TextBox();
             textBoxPeople_KDA = new TextBox();
             textBoxPeopleIn_KDA = new TextBox();
@@ -53,6 +45,15 @@
             openFileDialog_KDA = new OpenFileDialog();
             toolTip1 = new ToolTip(components);
             groupBox_KDA = new GroupBox();
+            buttonCount_KDA = new Button();
+            Surname = new DataGridViewTextBoxColumn();
+            Num_Entrance = new DataGridViewTextBoxColumn();
+            Num_Apartment = new DataGridViewTextBoxColumn();
+            Square = new DataGridViewTextBoxColumn();
+            Room_Count = new DataGridViewTextBoxColumn();
+            Pet = new DataGridViewTextBoxColumn();
+            Debt = new DataGridViewTextBoxColumn();
+            People_Count = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).BeginInit();
             groupBox_KDA.SuspendLayout();
             SuspendLayout();
@@ -102,58 +103,6 @@
             dataGridView_KDA.RowHeadersVisible = false;
             dataGridView_KDA.Size = new Size(731, 232);
             dataGridView_KDA.TabIndex = 3;
-            // 
-            // Surname
-            // 
-            Surname.HeaderText = "Фамилия";
-            Surname.Name = "Surname";
-            Surname.ReadOnly = true;
-            // 
-            // Num_Entrance
-            // 
-            Num_Entrance.HeaderText = "Номер подъезда";
-            Num_Entrance.Name = "Num_Entrance";
-            Num_Entrance.ReadOnly = true;
-            Num_Entrance.Width = 75;
-            // 
-            // Num_Apartment
-            // 
-            Num_Apartment.HeaderText = "Номер кв";
-            Num_Apartment.Name = "Num_Apartment";
-            Num_Apartment.ReadOnly = true;
-            Num_Apartment.Width = 50;
-            // 
-            // Square
-            // 
-            Square.HeaderText = "Площадь";
-            Square.Name = "Square";
-            Square.ReadOnly = true;
-            Square.Width = 75;
-            // 
-            // Room_Count
-            // 
-            Room_Count.HeaderText = "Кол.во комнат";
-            Room_Count.Name = "Room_Count";
-            Room_Count.ReadOnly = true;
-            // 
-            // Pet
-            // 
-            Pet.HeaderText = "Животные";
-            Pet.Name = "Pet";
-            Pet.ReadOnly = true;
-            Pet.Width = 75;
-            // 
-            // Debt
-            // 
-            Debt.HeaderText = "Задолженность";
-            Debt.Name = "Debt";
-            Debt.ReadOnly = true;
-            // 
-            // People_Count
-            // 
-            People_Count.HeaderText = "Кол.во человек";
-            People_Count.Name = "People_Count";
-            People_Count.ReadOnly = true;
             // 
             // textBoxApartment_KDA
             // 
@@ -242,16 +191,72 @@
             groupBox_KDA.Controls.Add(textBoxPeopleIn_KDA);
             groupBox_KDA.Location = new Point(12, 333);
             groupBox_KDA.Name = "groupBox_KDA";
-            groupBox_KDA.Size = new Size(397, 120);
+            groupBox_KDA.Size = new Size(392, 120);
             groupBox_KDA.TabIndex = 12;
             groupBox_KDA.TabStop = false;
             groupBox_KDA.Text = "Общие сведения:";
+            // 
+            // buttonCount_KDA
+            // 
+            buttonCount_KDA.Enabled = false;
+            buttonCount_KDA.Location = new Point(421, 396);
+            buttonCount_KDA.Name = "buttonCount_KDA";
+            buttonCount_KDA.Size = new Size(91, 42);
+            buttonCount_KDA.TabIndex = 10;
+            buttonCount_KDA.Text = "Расчитать";
+            buttonCount_KDA.UseVisualStyleBackColor = true;
+            buttonCount_KDA.Click += buttonCount_KDA_Click;
+            // 
+            // Surname
+            // 
+            Surname.HeaderText = "Фамилия";
+            Surname.Name = "Surname";
+            // 
+            // Num_Entrance
+            // 
+            Num_Entrance.HeaderText = "Номер подъезда";
+            Num_Entrance.Name = "Num_Entrance";
+            Num_Entrance.Width = 75;
+            // 
+            // Num_Apartment
+            // 
+            Num_Apartment.HeaderText = "Номер кв";
+            Num_Apartment.Name = "Num_Apartment";
+            Num_Apartment.Width = 50;
+            // 
+            // Square
+            // 
+            Square.HeaderText = "Площадь";
+            Square.Name = "Square";
+            Square.Width = 75;
+            // 
+            // Room_Count
+            // 
+            Room_Count.HeaderText = "Кол.во комнат";
+            Room_Count.Name = "Room_Count";
+            // 
+            // Pet
+            // 
+            Pet.HeaderText = "Животные";
+            Pet.Name = "Pet";
+            Pet.Width = 75;
+            // 
+            // Debt
+            // 
+            Debt.HeaderText = "Задолженность";
+            Debt.Name = "Debt";
+            // 
+            // People_Count
+            // 
+            People_Count.HeaderText = "Кол.во человек";
+            People_Count.Name = "People_Count";
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(755, 455);
+            Controls.Add(buttonCount_KDA);
             Controls.Add(buttonPerson_KDA);
             Controls.Add(buttonChart_KDA);
             Controls.Add(dataGridView_KDA);
@@ -274,14 +279,6 @@
         private Button buttonOpen_KDA;
         private Button buttonHelp_KDA;
         private DataGridView dataGridView_KDA;
-        private DataGridViewTextBoxColumn Surname;
-        private DataGridViewTextBoxColumn Num_Entrance;
-        private DataGridViewTextBoxColumn Num_Apartment;
-        private DataGridViewTextBoxColumn Square;
-        private DataGridViewTextBoxColumn Room_Count;
-        private DataGridViewTextBoxColumn Pet;
-        private DataGridViewTextBoxColumn Debt;
-        private DataGridViewTextBoxColumn People_Count;
         private TextBox textBoxApartment_KDA;
         private TextBox textBoxPeople_KDA;
         private TextBox textBoxPeopleIn_KDA;
@@ -293,5 +290,14 @@
         private OpenFileDialog openFileDialog_KDA;
         private ToolTip toolTip1;
         private GroupBox groupBox_KDA;
+        private Button buttonCount_KDA;
+        private DataGridViewTextBoxColumn Surname;
+        private DataGridViewTextBoxColumn Num_Entrance;
+        private DataGridViewTextBoxColumn Num_Apartment;
+        private DataGridViewTextBoxColumn Square;
+        private DataGridViewTextBoxColumn Room_Count;
+        private DataGridViewTextBoxColumn Pet;
+        private DataGridViewTextBoxColumn Debt;
+        private DataGridViewTextBoxColumn People_Count;
     }
 }

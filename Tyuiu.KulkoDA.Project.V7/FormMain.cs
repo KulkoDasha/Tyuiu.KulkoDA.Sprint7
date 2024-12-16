@@ -12,6 +12,7 @@ namespace Tyuiu.KulkoDA.Project.V7
         }
         string openFilePath;
         DataService ds = new DataService();
+        
         private void buttonHelp_KDA_Click(object sender, EventArgs e)
         {
             FormAbout form = new FormAbout();
@@ -26,17 +27,18 @@ namespace Tyuiu.KulkoDA.Project.V7
             int row = ds.RowCount(openFilePath);
             dataGridView_KDA.RowCount = row;
             dataGridView_KDA.ColumnCount = col;
-            string[,] mass = new string[row,col];
-            mass = ds.StringMass(openFilePath,row,col);
+            string[,] mass = new string[row, col];
+            mass = ds.StringMass(openFilePath, row, col);
             int c = 0;
-            for(int i = 1; i < row; i++)
+            for (int i = 1; i < row; i++)
             {
-                for(int j = 0; j < col ; j++)
+                for (int j = 0; j < col; j++)
                 {
-                    dataGridView_KDA.Rows[c].Cells[j].Value = mass[i,j];
+                    dataGridView_KDA.Rows[c].Cells[j].Value = mass[i, j];
                 }
                 c++;
             }
+            buttonCount_KDA.Enabled = true;
         }
 
         private void buttonPerson_KDA_Click(object sender, EventArgs e)
@@ -50,5 +52,28 @@ namespace Tyuiu.KulkoDA.Project.V7
             FormChart form = new FormChart();
             form.ShowDialog();
         }
+
+        private void buttonCount_KDA_Click(object sender, EventArgs e)
+        {
+            int r = dataGridView_KDA.RowCount-1;
+            for(int i=0;i<r;i++)
+            {
+                textBoxApartmentIn_KDA.Text = Convert.ToString(r);
+            }
+            int people = 0;
+            for(int i=0;i<r; i++)
+            {
+                people += Convert.ToInt32(dataGridView_KDA.Rows[i].Cells[7].Value);
+            }
+            textBoxPeopleIn_KDA.Text=Convert.ToString(people);
+            int debt = 0;
+            for (int i = 0; i < r; i++)
+            {
+                debt += Convert.ToInt32(dataGridView_KDA.Rows[i].Cells[6].Value);
+            }
+            textBoxDebtIn_KDA.Text=Convert.ToString(debt);
+        }
+
+        
     }
 }

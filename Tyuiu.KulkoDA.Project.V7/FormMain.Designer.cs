@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             textBoxHeadLine_KDA = new TextBox();
             buttonOpen_KDA = new Button();
             buttonHelp_KDA = new Button();
@@ -55,9 +55,9 @@
             buttonPerson_KDA = new Button();
             openFileDialog_KDA = new OpenFileDialog();
             toolTip = new ToolTip(components);
+            buttonSave_KDA = new Button();
             groupBox_KDA = new GroupBox();
             buttonCount_KDA = new Button();
-            buttonSave_KDA = new Button();
             saveFileDialog_KDA = new SaveFileDialog();
             chart_KDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).BeginInit();
@@ -86,7 +86,7 @@
             buttonOpen_KDA.Name = "buttonOpen_KDA";
             buttonOpen_KDA.Size = new Size(66, 53);
             buttonOpen_KDA.TabIndex = 1;
-            toolTip.SetToolTip(buttonOpen_KDA, "Открыть файл\r\nВыберете нужный файл для обработки");
+            toolTip.SetToolTip(buttonOpen_KDA, "Открыть файл\r\nВыберите нужный файл для обработки");
             buttonOpen_KDA.UseVisualStyleBackColor = true;
             buttonOpen_KDA.Click += buttonOpen_KDA_Click;
             // 
@@ -242,6 +242,19 @@
             toolTip.ToolTipIcon = ToolTipIcon.Info;
             toolTip.ToolTipTitle = "Подсказка";
             // 
+            // buttonSave_KDA
+            // 
+            buttonSave_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSave_KDA.Enabled = false;
+            buttonSave_KDA.Image = (Image)resources.GetObject("buttonSave_KDA.Image");
+            buttonSave_KDA.Location = new Point(590, 12);
+            buttonSave_KDA.Name = "buttonSave_KDA";
+            buttonSave_KDA.Size = new Size(66, 53);
+            buttonSave_KDA.TabIndex = 13;
+            toolTip.SetToolTip(buttonSave_KDA, "Сохранить файл\r\nСохранить изменённую таблицу в файл с расширением csv");
+            buttonSave_KDA.UseVisualStyleBackColor = true;
+            buttonSave_KDA.Click += buttonSave_KDA_Click;
+            // 
             // groupBox_KDA
             // 
             groupBox_KDA.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -270,32 +283,19 @@
             buttonCount_KDA.UseVisualStyleBackColor = true;
             buttonCount_KDA.Click += buttonCount_KDA_Click;
             // 
-            // buttonSave_KDA
-            // 
-            buttonSave_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonSave_KDA.Enabled = false;
-            buttonSave_KDA.Image = (Image)resources.GetObject("buttonSave_KDA.Image");
-            buttonSave_KDA.Location = new Point(590, 12);
-            buttonSave_KDA.Name = "buttonSave_KDA";
-            buttonSave_KDA.Size = new Size(66, 53);
-            buttonSave_KDA.TabIndex = 13;
-            toolTip.SetToolTip(buttonSave_KDA, "Сохранить файл\r\nСохранить изменённую таблицу в файл с расширением csv");
-            buttonSave_KDA.UseVisualStyleBackColor = true;
-            buttonSave_KDA.Click += buttonSave_KDA_Click;
-            // 
             // chart_KDA
             // 
             chart_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            chartArea2.Name = "ChartArea1";
-            chart_KDA.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart_KDA.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chart_KDA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_KDA.Legends.Add(legend1);
             chart_KDA.Location = new Point(443, 95);
             chart_KDA.Name = "chart_KDA";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart_KDA.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart_KDA.Series.Add(series1);
             chart_KDA.Size = new Size(300, 232);
             chart_KDA.TabIndex = 14;
             chart_KDA.Text = "chart1";

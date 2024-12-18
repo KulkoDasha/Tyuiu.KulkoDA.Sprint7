@@ -50,7 +50,7 @@
             textBoxNum_KDA = new TextBox();
             textBoxEntrance_KDA = new TextBox();
             openFileDialog_KDA = new OpenFileDialog();
-            toolTip1 = new ToolTip(components);
+            toolTip = new ToolTip(components);
             groupBoxName_KDA.SuspendLayout();
             groupBoxDannye_KDA.SuspendLayout();
             SuspendLayout();
@@ -80,6 +80,7 @@
             buttonFind_KDA.Size = new Size(69, 49);
             buttonFind_KDA.TabIndex = 2;
             buttonFind_KDA.Text = "Найти";
+            toolTip.SetToolTip(buttonFind_KDA, "Введите фамилю нужного человека на английском\r\n");
             buttonFind_KDA.UseVisualStyleBackColor = true;
             buttonFind_KDA.Click += buttonFind_KDA_Click;
             // 
@@ -90,6 +91,7 @@
             buttonOpen_KDA.Name = "buttonOpen_KDA";
             buttonOpen_KDA.Size = new Size(66, 53);
             buttonOpen_KDA.TabIndex = 3;
+            toolTip.SetToolTip(buttonOpen_KDA, "Открыть файл\r\nВыберите нужный файл для обработки\r\n");
             buttonOpen_KDA.UseVisualStyleBackColor = true;
             buttonOpen_KDA.Click += buttonOpen_KDA_Click;
             // 
@@ -246,6 +248,11 @@
             // 
             openFileDialog_KDA.FileName = "openFileDialog1";
             // 
+            // toolTip
+            // 
+            toolTip.ToolTipIcon = ToolTipIcon.Info;
+            toolTip.ToolTipTitle = "Подсказка";
+            // 
             // FormPerson
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -288,6 +295,6 @@
         private TextBox textBoxSquare_KDA;
         private TextBox textBoxNum_KDA;
         private OpenFileDialog openFileDialog_KDA;
-        private ToolTip toolTip1;
+        private ToolTip toolTip;
     }
 }

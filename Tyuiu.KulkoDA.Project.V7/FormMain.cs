@@ -39,6 +39,7 @@ namespace Tyuiu.KulkoDA.Project.V7
             }
             buttonCount_KDA.Enabled = true;
             buttonSave_KDA.Enabled = true;
+            buttonChart_KDA.Enabled = true;
         }
 
         private void buttonPerson_KDA_Click(object sender, EventArgs e)
@@ -49,8 +50,14 @@ namespace Tyuiu.KulkoDA.Project.V7
 
         private void buttonChart_KDA_Click(object sender, EventArgs e)
         {
-            FormChart form = new FormChart();
-            form.ShowDialog();
+            string[,] mass = new string[dataGridView_KDA.RowCount,dataGridView_KDA.ColumnCount];
+            mass = ds.StringMass(openFilePath, dataGridView_KDA.RowCount, dataGridView_KDA.ColumnCount);
+            
+            this.chart_KDA.ChartAreas[0].AxisY.Title = "Общая площадь";
+            for(int i=0;i<dataGridView_KDA.RowCount;i++)
+            {
+                chart_KDA.Series[0].Points.AddXY(i,mass[i,3]);
+            }
         }
 
         private void buttonCount_KDA_Click(object sender, EventArgs e)
@@ -72,7 +79,7 @@ namespace Tyuiu.KulkoDA.Project.V7
                 debt += Convert.ToInt32(dataGridView_KDA.Rows[i].Cells[6].Value);
             }
             textBoxDebtIn_KDA.Text = Convert.ToString(debt);
-            
+
         }
 
         private void buttonSave_KDA_Click(object sender, EventArgs e)
@@ -83,11 +90,11 @@ namespace Tyuiu.KulkoDA.Project.V7
             int rows = dataGridView_KDA.Rows.Count;
             int cols = dataGridView_KDA.Columns.Count;
             string str = "";
-            for(int i = 0; i < rows; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for(int j = 0; j < cols; j++)
+                for (int j = 0; j < cols; j++)
                 {
-                    if(j!=cols-1)
+                    if (j != cols - 1)
                     {
                         str += dataGridView_KDA.Rows[i].Cells[j].Value + ";";
                     }
@@ -100,6 +107,11 @@ namespace Tyuiu.KulkoDA.Project.V7
                 str = "";
             }
             MessageBox.Show("Файл успешно сохранен!");
+        }
+
+        private void dataGridView_KDA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

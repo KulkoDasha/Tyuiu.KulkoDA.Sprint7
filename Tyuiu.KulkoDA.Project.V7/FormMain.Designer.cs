@@ -30,6 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             textBoxHeadLine_KDA = new TextBox();
             buttonOpen_KDA = new Button();
             buttonHelp_KDA = new Button();
@@ -56,8 +59,10 @@
             buttonCount_KDA = new Button();
             buttonSave_KDA = new Button();
             saveFileDialog_KDA = new SaveFileDialog();
+            chart_KDA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).BeginInit();
             groupBox_KDA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart_KDA).BeginInit();
             SuspendLayout();
             // 
             // textBoxHeadLine_KDA
@@ -66,7 +71,7 @@
             textBoxHeadLine_KDA.BackColor = SystemColors.MenuBar;
             textBoxHeadLine_KDA.BorderStyle = BorderStyle.None;
             textBoxHeadLine_KDA.Font = new Font("Segoe UI", 13F);
-            textBoxHeadLine_KDA.Location = new Point(281, 66);
+            textBoxHeadLine_KDA.Location = new Point(100, 66);
             textBoxHeadLine_KDA.Multiline = true;
             textBoxHeadLine_KDA.Name = "textBoxHeadLine_KDA";
             textBoxHeadLine_KDA.ReadOnly = true;
@@ -81,6 +86,7 @@
             buttonOpen_KDA.Name = "buttonOpen_KDA";
             buttonOpen_KDA.Size = new Size(66, 53);
             buttonOpen_KDA.TabIndex = 1;
+            toolTip.SetToolTip(buttonOpen_KDA, "Открыть файл\r\nВыберете нужный файл для обработки");
             buttonOpen_KDA.UseVisualStyleBackColor = true;
             buttonOpen_KDA.Click += buttonOpen_KDA_Click;
             // 
@@ -92,6 +98,7 @@
             buttonHelp_KDA.Name = "buttonHelp_KDA";
             buttonHelp_KDA.Size = new Size(66, 53);
             buttonHelp_KDA.TabIndex = 2;
+            toolTip.SetToolTip(buttonHelp_KDA, "Сведения о программе");
             buttonHelp_KDA.UseVisualStyleBackColor = true;
             buttonHelp_KDA.Click += buttonHelp_KDA_Click;
             // 
@@ -103,8 +110,9 @@
             dataGridView_KDA.Location = new Point(12, 95);
             dataGridView_KDA.Name = "dataGridView_KDA";
             dataGridView_KDA.RowHeadersVisible = false;
-            dataGridView_KDA.Size = new Size(731, 232);
+            dataGridView_KDA.Size = new Size(425, 232);
             dataGridView_KDA.TabIndex = 3;
+            dataGridView_KDA.CellContentClick += dataGridView_KDA_CellContentClick;
             // 
             // Surname
             // 
@@ -204,11 +212,13 @@
             // 
             // buttonChart_KDA
             // 
+            buttonChart_KDA.Enabled = false;
             buttonChart_KDA.Image = (Image)resources.GetObject("buttonChart_KDA.Image");
             buttonChart_KDA.Location = new Point(100, 12);
             buttonChart_KDA.Name = "buttonChart_KDA";
             buttonChart_KDA.Size = new Size(66, 53);
             buttonChart_KDA.TabIndex = 10;
+            toolTip.SetToolTip(buttonChart_KDA, "Нарисовать график по открытой таблице\r\n");
             buttonChart_KDA.UseVisualStyleBackColor = true;
             buttonChart_KDA.Click += buttonChart_KDA_Click;
             // 
@@ -219,12 +229,18 @@
             buttonPerson_KDA.Name = "buttonPerson_KDA";
             buttonPerson_KDA.Size = new Size(66, 53);
             buttonPerson_KDA.TabIndex = 11;
+            toolTip.SetToolTip(buttonPerson_KDA, "Поиск персональные данные");
             buttonPerson_KDA.UseVisualStyleBackColor = true;
             buttonPerson_KDA.Click += buttonPerson_KDA_Click;
             // 
             // openFileDialog_KDA
             // 
             openFileDialog_KDA.FileName = "openFileDialog1";
+            // 
+            // toolTip
+            // 
+            toolTip.ToolTipIcon = ToolTipIcon.Info;
+            toolTip.ToolTipTitle = "Подсказка";
             // 
             // groupBox_KDA
             // 
@@ -263,14 +279,33 @@
             buttonSave_KDA.Name = "buttonSave_KDA";
             buttonSave_KDA.Size = new Size(66, 53);
             buttonSave_KDA.TabIndex = 13;
+            toolTip.SetToolTip(buttonSave_KDA, "Сохранить файл\r\nСохранить изменённую таблицу в файл с расширением csv");
             buttonSave_KDA.UseVisualStyleBackColor = true;
             buttonSave_KDA.Click += buttonSave_KDA_Click;
+            // 
+            // chart_KDA
+            // 
+            chart_KDA.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            chartArea2.Name = "ChartArea1";
+            chart_KDA.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart_KDA.Legends.Add(legend2);
+            chart_KDA.Location = new Point(443, 95);
+            chart_KDA.Name = "chart_KDA";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart_KDA.Series.Add(series2);
+            chart_KDA.Size = new Size(300, 232);
+            chart_KDA.TabIndex = 14;
+            chart_KDA.Text = "chart1";
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(755, 455);
+            Controls.Add(chart_KDA);
             Controls.Add(buttonSave_KDA);
             Controls.Add(buttonCount_KDA);
             Controls.Add(buttonPerson_KDA);
@@ -282,9 +317,11 @@
             Controls.Add(groupBox_KDA);
             Name = "FormMain";
             Text = "Главное Меню";
+            toolTip.SetToolTip(this, "Подсказка\r\nОткрыть файл\r\nВыберете нужный файл для обработки\r\n");
             ((System.ComponentModel.ISupportInitialize)dataGridView_KDA).EndInit();
             groupBox_KDA.ResumeLayout(false);
             groupBox_KDA.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart_KDA).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -317,5 +354,6 @@
         private DataGridViewTextBoxColumn People_Count;
         private Button buttonSave_KDA;
         private SaveFileDialog saveFileDialog_KDA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_KDA;
     }
 }
